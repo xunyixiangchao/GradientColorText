@@ -19,12 +19,13 @@ public class MainActivity extends AppCompatActivity {
         text.setInputText("时光如流水");
         text.setDefaultColor(R.color.green);
         text.setSelectedColor(R.color.red);
+
         //属性动画
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ObjectAnimator.ofFloat(text, "percent", 0, 1).setDuration(5000).start();
+                ObjectAnimator.ofFloat(text, "percent", 0, 1).setDuration(2500).start();
             }
         }, 1000);
     }

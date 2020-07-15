@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 
 import androidx.appcompat.widget.AppCompatTextView;
@@ -69,9 +70,11 @@ public class GradientColorText extends AppCompatTextView {
         init();
     }
 
-    private void init() {
+    Typeface tf;
 
+    private void init() {
         mPaint = new Paint();
+        tf = Typeface.createFromAsset(mContext.getAssets(), "fonts/7.ttf");
     }
 
 
@@ -88,6 +91,7 @@ public class GradientColorText extends AppCompatTextView {
         mPaint.reset();
         mPaint.setAntiAlias(true);
         mPaint.setTextSize(80);
+        mPaint.setTypeface(tf);
         mPaint.setColor(mContext.getResources().getColor(defaultColor));
         //1.设置文字垂直居中
         // mPaint.setTextAlign(Paint.Align.CENTER);
@@ -111,6 +115,7 @@ public class GradientColorText extends AppCompatTextView {
         mPaint.reset();
         mPaint.setAntiAlias(true);
         mPaint.setTextSize(80);
+        mPaint.setTypeface(tf);
         mPaint.setColor(mContext.getResources().getColor(selectedColor));
         //1.设置文字垂直居中
         //mPaint.setTextAlign(Paint.Align.CENTER);
