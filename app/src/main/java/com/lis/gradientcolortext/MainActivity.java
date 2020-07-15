@@ -1,6 +1,7 @@
 package com.lis.gradientcolortext;
 
 import android.animation.ObjectAnimator;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -16,9 +17,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final GradientColorText text = findViewById(R.id.text);
-        text.setInputText("时光如流水");
+        text.setInputText("Android");
         text.setDefaultColor(R.color.green);
         text.setSelectedColor(R.color.red);
+        Typeface  tf = Typeface.createFromAsset(getAssets(), "fonts/1.ttf");
+        text.setCustomTypeface(tf);
 
         //属性动画
         Handler handler = new Handler();

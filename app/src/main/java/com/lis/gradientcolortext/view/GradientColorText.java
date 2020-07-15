@@ -74,7 +74,7 @@ public class GradientColorText extends AppCompatTextView {
 
     private void init() {
         mPaint = new Paint();
-        tf = Typeface.createFromAsset(mContext.getAssets(), "fonts/7.ttf");
+
     }
 
 
@@ -133,4 +133,7 @@ public class GradientColorText extends AppCompatTextView {
     }
 
 
+    public void setCustomTypeface(Typeface tf) {
+        this.tf = tf;
+    }
 }
