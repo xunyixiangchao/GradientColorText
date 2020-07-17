@@ -47,7 +47,6 @@ public class ViewpagerActivity extends AppCompatActivity {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (positionOffset >= 0) {
-
                     GradientColorText left = (GradientColorText) tabLayout.getChildAt(position);
                     GradientColorText right = (GradientColorText) tabLayout.getChildAt(position + 1);
                     left.setScrollMode(GradientColorText.MODE_RIGHT);

@@ -115,6 +115,7 @@ public class GradientColorText extends AppCompatTextView {
 
 
     }
+
     private void drawRightDefaultText(Canvas canvas) {
         canvas.save();
         mPaint.reset();
@@ -130,8 +131,8 @@ public class GradientColorText extends AppCompatTextView {
 
         float left = getWidth() / 2 - width / 2;
         //避免重复绘制
-        float left_x = left + width * mPercent;
-        Rect rect = new Rect(getWidth(), 0, (int) left_x, getHeight());
+        float left_x = left + getWidth() * (1 - mPercent);
+        Rect rect = new Rect((int) left, 0, (int) left_x, getHeight());
         canvas.clipRect(rect);
 
         float y = getHeight() / 2 + (fontMetrics.bottom - fontMetrics.ascent) / 2 - fontMetrics.bottom;
@@ -153,14 +154,13 @@ public class GradientColorText extends AppCompatTextView {
         Paint.FontMetrics fontMetrics = mPaint.getFontMetrics();
         //避免重复绘制
         float left = getWidth() / 2 - width / 2;
-        Rect rect = new Rect((int) (left + getWidth() * mPercent), 0, (int) left, getHeight());
+        Rect rect = new Rect((int) (getWidth() / 2 + width / 2), 0, (int) (getWidth() * (1 - mPercent)), getHeight());
         canvas.clipRect(rect);
 
         float y = getHeight() / 2 + (fontMetrics.bottom - fontMetrics.ascent) / 2 - fontMetrics.bottom;
         canvas.drawText(inputText, left, y, mPaint);
         canvas.restore();
     }
-
 
 
     private void drawLeftDefaultText(Canvas canvas) {
